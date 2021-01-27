@@ -1,0 +1,12 @@
+<div *ngIf="weather$ | async as weathers" class="weather-wrap">
+    <mat-card *ngIf="weathers.length">
+        <mat-card-content>
+                <div *ngFor="let weather of weathers; let i = index" class="weather">
+                    <span>{{i + 1}}. </span>
+                    <span> {{weather.city}}</span>
+                    <span> {{weather.temp}}&deg;;</span>
+                    <span> {{weather.description}}</span>
+                </div>
+        </mat-card-content>
+    </mat-card>
+</div>

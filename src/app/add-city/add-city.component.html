@@ -1,0 +1,23 @@
+<mat-card>
+    <mat-card-header>
+        <p>Add City</p>
+    </mat-card-header>
+    <mat-card-content>
+        <form [formGroup]="form" (ngSubmit)="addCity()" class="form">
+
+            <div class="form-control">
+                <label for="city">Choose City</label>
+                <input matInput placeholder="Add city" [formControl]="city" type="text">
+            </div>
+            <div class="form-control">
+                <mat-radio-group aria-label="Choose Unit">
+                    <mat-radio-button color="primary" [value]="unit.Metric" (change)="changeUnit($event)">metric</mat-radio-button>
+                    <mat-radio-button color="primary" [value]="unit.Imperial" (change)="changeUnit($event)">imperial</mat-radio-button>
+                </mat-radio-group>
+            </div>
+            <button mat-mini-fab color="primary" type="submit" [disabled]="!form.valid">
+                <mat-icon>add</mat-icon>
+            </button>
+        </form>
+    </mat-card-content>
+</mat-card>
